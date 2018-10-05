@@ -1,6 +1,4 @@
-# lógica dos Ventos
-#D: -1
-#E: +1
+
 
 def giro(direcao, dirOuEsq=0):
     dic = {"L": 2, "N": 1, "O": 0, "S": 3}
@@ -11,10 +9,6 @@ def giro(direcao, dirOuEsq=0):
         n = 0
     if n < 0:
         n = 3
-    #d = { 0:"Sua direção atual é o LESTE", 1:"Sua direção atual é o NORTE",     }
-     #       2:"Sua direção atual é o OESTE", 3: "Sua direção atual é o SUL"}
-
-    #print(d[n])
     dic = {2: "L", 1: "N", 0: "O", 3: "S"}
 
     return dic[n]
@@ -73,25 +67,39 @@ def geraCaminho(ctte, posInicial, orientacao, matriz, sequencia):
             if ctte in "OS":
                 posInicial = caminhaOeste(orientacao, [posInicial[0], posInicial[1]], matriz)
             saida[posInicial] = matriz[posInicial]
+
     return saida
 
-matriz = {}
-pLinha = input().split()
-pLinha = [int(c) for c in pLinha]
-orientacao = ""
-for linha in range(pLinha[0]):
-    l = input()
-    for coluna in range(pLinha[1]):
-        t = (linha,coluna)
-        if l[coluna] == "#":
-            continue
-        elif l[coluna] in "NOLS":
-            posicaoAtual = [linha,coluna]
-            orientacao = l[coluna]
-            ctte = orientacao
-            matriz[t] = l[coluna]
-        else:
-            matriz[t] = l[coluna]
-sequencia = input()
-print(matriz)
-print(geraCaminho(ctte,posicaoAtual,orientacao,matriz,sequencia))
+def calculaFigurinhas(matriz):
+    s = 0
+    for i in matriz:
+        if matriz[i] == "*":
+            s+=1
+    return s
+
+
+saida = ""
+while True:
+    matriz = {}
+    pLinha = input().split()
+    pLinha = [int(c) for c in pLinha]
+    if sum(pLinha) == 0:
+        break
+    orientacao = ""
+    for linha in range(pLinha[0]):
+        l = input()
+        for coluna in range(pLinha[1]):
+            t = (linha,coluna)
+            if l[coluna] == "#":
+                continue
+            elif l[coluna] in "NOLS":
+                posicaoAtual = [linha,coluna]
+                orientacao = l[coluna]
+                ctte = orientacao
+                matriz[t] = l[coluna]
+            else:
+                matriz[t] = l[coluna]
+    sequencia = input()
+    resultado = geraCaminho(ctte,posicaoAtual,orientacao,matriz,sequencia)
+    saida+=str(calculaFigurinhas(resultado))+"\n"
+print(saida[:-1:])
