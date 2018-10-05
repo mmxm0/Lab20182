@@ -2,31 +2,36 @@
 #D: -1
 #E: +1
 
-def giro(direcao, x=0):
-    dic = {"L": 0, "N": 1, "O": 2, "S": 3}
+def giro(direcao, dirOuEsq=0):
+    dic = {"L": 2, "N": 1, "O": 0, "S": 3}
+
     n = dic[direcao]
-    n += x
+    n += dirOuEsq
     if n > 3:
         n = 0
     if n < 0:
         n = 3
-    '''   d = { 0:"Sua direção atual é o LESTE", 1:"Sua direção atual é o NORTE",
-            2:"Sua direção atual é o OESTE", 3: "Sua direção atual é o SUL"}
+    #d = { 0:"Sua direção atual é o LESTE", 1:"Sua direção atual é o NORTE",     }
+     #       2:"Sua direção atual é o OESTE", 3: "Sua direção atual é o SUL"}
 
-    print(d[n])'''
-    return n
+    #print(d[n])
+    dic = {2: "L", 1: "N", 0: "O", 3: "S"}
+
+    return dic[n]
 
 
 def caminha(direcao,posicao):
+
     if direcao == "L":
-        posicao[0]+=1
-    elif direcao == "N":
         posicao[1]+=1
-    elif direcao =="O":
+    elif direcao == "N":
         posicao[0]-=1
-    elif direcao == "S":
+    elif direcao =="O":
         posicao[1]-=1
-    return posicao
+    elif direcao == "S":
+        posicao[0]+=1
+
+    return (posicao[0],posicao[1])
 
 def validPosicao(matriz,pos):
     try:
@@ -35,19 +40,70 @@ def validPosicao(matriz,pos):
     except KeyError:
         return False
 
-sequencia = "DEDDEEEEDE"
-m = 2
-dicNum = {0:"L", 1:"N", 2:"O", 3:"S"}
-dic = {"L": 0, "N": 1, "O": 2, "S": 3}
-posicaoAtual = [1,1]
+
+def geraCaminho(posInicial, orientacao, matriz, sequencia):
+
+    saida = {(posInicial[0],posInicial[1]):orientacao}
+    m = orientacao
+    for i in sequencia:
+        if i == "D":
+            m = giro(orientacao,-1)
+        elif i == "E":
+            m = giro(orientacao,+1)
+        elif i =="F":
+            posInicial = caminha(m, [posInicial[0],posInicial[1]])
+            if validPosicao(matriz, posInicial):
+                saida[posInicial] = matriz[posInicial]
+    return saida
+
+matriz = {}
+pLinha = input().split()
+pLinha = [int(c) for c in pLinha]
+orientacao = ""
+for linha in range(pLinha[0]):
+    l = input()
+    for coluna in range(pLinha[1]):
+        t = (linha,coluna)
+        if l[coluna] == "#":
+            continue
+        elif l[coluna] in "NOLS":
+            posicaoAtual = [linha,coluna]
+            orientacao = l[coluna]
+        else:
+            matriz[t] = l[coluna]
+sequencia = input()
+print(matriz)
+
+#sequencia = "FFEFF"
+m = "O"
+dicNum = {2:"L", 3:"N", 0:"O", 1:"S"}
+dic = {"L": 2, "N": 3, "O": 0, "S": 1}
+#posicaoAtual = [1,2]
 arena ={}
 figurinhas = []
 saida = 0
-for i in sequencia:
-    k = dicNum[m]
-    if i=="D":
-        m = giro(k,-1)
-    elif i=="E":
-        m = giro(k,1)
-    elif i=="F":
-        pass
+#matriz = { (0,0):".",(0,1):".",(0,2):".",(1,3):".",(2,1):".",(2,3):".",(3,3):".",(3,1):"."
+#           ,(1,0):"*",(2,0):"*",(2,2):"*",(3,0):"*"}
+#figurinhas = {(1,0):"*",(2,0):"*",(2,2):"*",(3,0):"*"}
+
+caminho = {}
+print(geraCaminho(posicaoAtual,orientacao,matriz,sequencia))
+'''
+for t in matriz:
+    tupla =[t[0],t[1]]
+    for i in sequencia:
+        k = dicNum[m]
+        if i=="D":
+            m = giro(k,-1)
+        elif i=="E":
+            m = giro(k,+1)
+        elif i=="F":
+            novaPosicao = caminha(k, [tupla[0],tupla[1]])
+
+            if validPosicao(matriz, novaPosicao) and validPosicao(figurinhas, novaPosicao):
+                saida+=1
+                del figurinhas[novaPosicao]
+                matriz[novaPosicao] = "."'''
+
+
+print(saida)
