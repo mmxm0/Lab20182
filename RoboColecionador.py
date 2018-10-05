@@ -20,18 +20,20 @@ def giro(direcao, dirOuEsq=0):
     return dic[n]
 
 
-def caminha(direcao,posicao):
-
+def caminha(direcao,posicao, matriz):
+    pivo = (posicao[0], posicao[1])
     if direcao == "L":
-        posicao[1]+=1
+        posicao[1]-=1
     elif direcao == "N":
         posicao[0]-=1
     elif direcao =="O":
-        posicao[1]-=1
+        posicao[1]+=1
     elif direcao == "S":
         posicao[0]+=1
-
-    return (posicao[0],posicao[1])
+    if validPosicao(matriz, (posicao[0],posicao[1])):
+        return (posicao[0],posicao[1])
+    else:
+        return pivo
 
 def validPosicao(matriz,pos):
     try:
@@ -44,16 +46,15 @@ def validPosicao(matriz,pos):
 def geraCaminho(posInicial, orientacao, matriz, sequencia):
 
     saida = {(posInicial[0],posInicial[1]):orientacao}
-    m = orientacao
+
     for i in sequencia:
         if i == "D":
-            m = giro(orientacao,-1)
+            orientacao= giro(orientacao,-1)
         elif i == "E":
-            m = giro(orientacao,+1)
+            orientacao = giro(orientacao,+1)
         elif i =="F":
-            posInicial = caminha(m, [posInicial[0],posInicial[1]])
-            if validPosicao(matriz, posInicial):
-                saida[posInicial] = matriz[posInicial]
+            posInicial = caminha(orientacao, [posInicial[0],posInicial[1]],matriz)
+            saida[posInicial] = matriz[posInicial]
     return saida
 
 matriz = {}
@@ -69,6 +70,7 @@ for linha in range(pLinha[0]):
         elif l[coluna] in "NOLS":
             posicaoAtual = [linha,coluna]
             orientacao = l[coluna]
+            matriz[t] = l[coluna]
         else:
             matriz[t] = l[coluna]
 sequencia = input()
