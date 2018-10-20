@@ -7,20 +7,19 @@ def somaCol(matriz):
         colunas.append(soma)
         soma=0
     return colunas
+
 def descobre(l):
     dif = 0 #index do numero que eu quero
-    for i in range(len(l)-1):
-        if l.count(l[i])<l.count(l[i+1]):
-            dif = i
-            break
-    return dif
+    espelho = []
+    for i in l:
+        espelho.append(l.count(i))
+    return l.index(l[espelho.index(min(espelho))]),l.index(l[espelho.index(max(espelho))])
 
 n = int(input())
 cont = 0
 quadrado = [[]]*n
 somaLinhas = []
 
-dic = {}
 while cont<n:
     
     linha = input().split()
@@ -31,4 +30,11 @@ while cont<n:
 
 somaColunas = somaCol(quadrado)
 
-print(quadrado, somaLinhas, descobre(somaLinhas))
+c = descobre(somaColunas)
+l = descobre(somaLinhas)
+
+s = somaColunas[1]
+e = quadrado[l[0]][c[0]]
+x= s - (sum(quadrado[l[0]])-e)
+
+print("%i %i"%(x,e))
