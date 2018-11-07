@@ -24,3 +24,15 @@ for i in range(N):
     listaHabilidades[i] = int(j[1])
 
 saida = quicksort(listaHabilidades)
+
+while len(saida)>0:
+    for t in range(len(times)):
+        jogador = saida.pop(-1)
+        times[t].append("%s %i"%(dicJogadores[jogador],jogador))
+
+#format output
+for k in range(len(times)):
+    print("Time %i" %(k+1))
+    for j in range(len(times[k])):
+        print("%s" %times[k][j])
+    print("")
