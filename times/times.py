@@ -15,7 +15,7 @@ def quicksort(x):
 entrada = input().split()
 N = int(entrada[0])
 T = int(entrada[1])
-times=[[]*T]
+times=[[]]*T
 dicJogadores = {}
 listaHabilidades = [None]*N
 for i in range(N):
@@ -23,12 +23,16 @@ for i in range(N):
     dicJogadores[int(j[1])] = j[0]
     listaHabilidades[i] = int(j[1])
 
-saida = quicksort(listaHabilidades)
-
+saida = quickSort(listaHabilidades)
+t = 0
+#regra
 while len(saida)>0:
-    for t in range(len(times)):
-        jogador = saida.pop(-1)
-        times[t].append("%s %i"%(dicJogadores[jogador],jogador))
+    jogador = saida.pop(-1)
+    s = "%s %i"%(dicJogadores[jogador],jogador)
+    times[t].append(s)
+    print(times[t], t)
+    del dicJogadores[jogador]
+    t+=1
 
 #format output
 for k in range(len(times)):

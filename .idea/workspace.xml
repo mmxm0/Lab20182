@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aee05d2b-010e-44b1-9003-ebbdfb5978bb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/times/times.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ExpressoesdeJuvenal/expressoesdeJuyvenal.py" afterPath="$PROJECT_DIR$/ExpressoesdeJuvenal/expressoesdeJuyvenal.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/times/times.py" afterPath="$PROJECT_DIR$/times/times.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,41 +16,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="banco_inteligente.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/banco_inteligente/banco_inteligente.py">
+      <file leaf-file-name="expressoesdeJuyvenal.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ExpressoesdeJuvenal/expressoesdeJuyvenal.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="colheita_caju.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/colheitadecaju/colheita_caju.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SCLSequComumMaisLonga.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/biblioteca/SCLSequComumMaisLonga.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="31" lean-forward="false" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="times.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/times/times.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="233">
+              <caret line="159" column="22" lean-forward="true" selection-start-line="159" selection-start-column="22" selection-end-line="159" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -63,6 +34,11 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>class No\:\n    def __init__\(self\, dados\=None\)\:\n        self\.__dado \= dados\n        self\.__anterior \= None\n        self\.__proximo \= None\n\n    def getProximo\(self\)\:\n        return self\.__proximo\n\n    def setProximo\(self\, no\)\:\n        self\.__proximo \= no\n\n    def getAnterior\(self\)\:\n        return self\.__anterior\n\n    def setAnterior\(self\, no\)\:\n        self\.__anterior \= no\n\n    def getDado\(self\)\:\n        return self\.__dado\n\n\nclass ListaEncadeada\(\)\:\n    def __init__\(self\)\:\n        self\._inicio \= None\n        self\._fim \= None\n        self\._len \= None\n\n    def getInicio\(self\)\:\n        return self\._inicio\n\n    def getFim\(self\)\:\n        return self\._fim\n\n    def isVazia\(self\)\:\n        if self\._inicio is None\:\n            return True\n        else\:\n            return False\n\n    def inserir\(self\, dado\)\:\n        newno \= No\(dado\)\n        if self\.isVazia\(\)\:\n            self\._inicio \= newno\n            self\._fim \= newno\n        else\:\n            self\._fim\.setProximo\(newno\)\n            newno\.setAnterior\(self\._fim\)\n            self\._fim \= newno\n\n    def pesquisar\(self\, dado\)\:\n        if self\.isVazia\(\)\:\n            print\(\&quot;Erro\, Lista Vazia\&quot;\)\n        else\:\n            nov \= No\(dado\)\n            i \= self\._inicio\n            while nov\.getDado\(\) \!\= i\.getDado\(\)\:\n                i \= i\.getProximo\(\)\n                if i is None\:\n                    break\n            else\:\n                return i\n\n    def remover\(self\)\:\n        if self\.isVazia\(\)\:\n            saida \= \&quot;ERRO\, LISTA VAZIA\&quot;\n\n        elif self\._inicio \=\= self\._fim\:\n            saida \= self\._fim\.getDado\(\)\n            self\._inicio \= None\n            self\._fim \= None\n\n        else\:\n            e \= self\._fim\n            saida \= e\.getDado\(\)\n            novoFim \= e\.getAnterior\(\)\n            self\._fim \= novoFim\n            novoFim\.setProximo\(None\)\n        return saida\n\n    def listarPilha\(self\)\:\n        saida \= \&quot;\[\&quot;\n        if self\.isVazia\(\)\:\n            saida \+\= \&quot; \]\&quot;\n        else\:\n            k \= self\._fim\n\n            while k is not None\:\n                saida \+\= \(str\(k\.getDado\(\)\) \+ \&quot;\, \&quot;\)\n                k \= k\.getAnterior\(\)\n        s \= saida\[\:\-2\:\]\n        s \+\= \&quot;\]\&quot;\n        print\(s\)\n\n    def listar\(self\)\:\n        saida \= \[\]\n        if self\.isVazia\(\)\:\n            saida \= None\n        else\:\n            k \= self\._inicio\n\n            while k is not None\:\n                saida\.append\(str\(k\.getDado\(\)\)\)\n                k \= k\.getProximo\(\)\n\n        return saida\n\n    def getLen\(self\)\:\n        if self\.isVazia\(\)\:\n            return 0\n        else\:\n            k \= self\._inicio\n            tamanho \= 0\n            while k is not None\:\n                tamanho \+\= 1\n                k \= k\.getProximo\(\)\n            return tamanho\n\n\nclass Pilha\(ListaEncadeada\)\:\n    def push\(self\, dado\)\:\n        self\.inserir\(dado\)\n\n    def pop\(self\)\:\n        return self\.remover\(\)\n\n\nlinha1\=int\(input\(\)\)\ncontador \= 0\n\n\ndef casa\(abre\, fecha\)\:\n    d \= \{\&quot;\[\&quot;\:\&quot;\]\&quot;\,\&quot;\{\&quot;\:\&quot;\}\&quot;\,\&quot;\(\&quot;\:\&quot;\)\&quot;\}\n    compara \= d\[abre\]\n    if compara \=\= fecha\:\n        b \= True\n    else\:\n        b \=  False\n    return b\n\n\nwhile contador \&lt; linha1\:\n \n    i \= 0\n    p \= Pilha\(\)\n    cadeia \= input\(\)\n    while i \&lt; len\(cadeia\)\:\n        saida \= \&quot;S\&quot;\n        n \= cadeia\[i\]\n        while n in \&quot;\(\{\[\&quot;\:\n            p\.push\(n\)\n            i\+\=1\n        s \= p\.pop\(\)\n        if casa\(s\,n\)\:\n            i\+\=1\n</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -79,6 +55,7 @@
         <option value="$PROJECT_DIR$/biblioteca/SCL_sequ_comum_mais_longa.py" />
         <option value="$PROJECT_DIR$/biblioteca/SCLSequComumMaisLonga.py" />
         <option value="$PROJECT_DIR$/times/times.py" />
+        <option value="$PROJECT_DIR$/ExpressoesdeJuvenal/expressoesdeJuyvenal.py" />
       </list>
     </option>
   </component>
@@ -106,7 +83,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -130,6 +106,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="times" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lab20182" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lab20182" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExpressoesdeJuvenal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -192,6 +182,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -210,7 +201,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.SCLSequComumMaisLonga">
+  <component name="RunManager" selected="Python.expressoesdeJuyvenal">
     <configuration default="false" name="RoboColecionador" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -260,6 +251,42 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Lab20182" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/biblioteca/SCLSequComumMaisLonga.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="times" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/times" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Lab20182" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/times/times.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="expressoesdeJuyvenal" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ExpressoesdeJuvenal" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Lab20182" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ExpressoesdeJuvenal/expressoesdeJuyvenal.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -330,15 +357,19 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
-    <list size="3">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.RoboColecionador" />
       <item index="1" class="java.lang.String" itemvalue="Python.quadradoQuaseMagico" />
       <item index="2" class="java.lang.String" itemvalue="Python.SCLSequComumMaisLonga" />
+      <item index="3" class="java.lang.String" itemvalue="Python.times" />
+      <item index="4" class="java.lang.String" itemvalue="Python.expressoesdeJuyvenal" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.SCLSequComumMaisLonga" />
-        <item index="1" class="java.lang.String" itemvalue="Python.quadradoQuaseMagico" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Python.expressoesdeJuyvenal" />
+        <item index="1" class="java.lang.String" itemvalue="Python.times" />
+        <item index="2" class="java.lang.String" itemvalue="Python.SCLSequComumMaisLonga" />
+        <item index="3" class="java.lang.String" itemvalue="Python.quadradoQuaseMagico" />
       </list>
     </recent_temporary>
   </component>
@@ -362,12 +393,13 @@
     <frame x="-8" y="-8" width="1318" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2535771" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25755167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32872504" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -378,7 +410,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -387,6 +418,33 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/times/times.py</url>
+          <line>11</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/times/times.py</url>
+          <line>34</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/times/times.py</url>
+          <line>31</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ExpressoesdeJuvenal/expressoesdeJuyvenal.py</url>
+          <line>149</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ExpressoesdeJuvenal/expressoesdeJuyvenal.py</url>
+          <line>158</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -394,11 +452,51 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="13" />
+      <option name="time" value="30" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/banco_inteligente/banco_inteligente.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/colheitadecaju/colheita_caju.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/biblioteca/SCLSequComumMaisLonga.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="31" lean-forward="false" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5236">
+          <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/times/times.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/banco_inteligente/banco_inteligente.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -441,6 +539,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5440">
           <caret line="320" column="0" lean-forward="false" selection-start-line="320" selection-start-column="0" selection-end-line="320" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -455,6 +554,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4522">
           <caret line="266" column="0" lean-forward="false" selection-start-line="266" selection-start-column="0" selection-end-line="266" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -476,6 +576,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4522">
           <caret line="266" column="0" lean-forward="false" selection-start-line="266" selection-start-column="0" selection-end-line="266" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -523,23 +624,16 @@
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="320" column="0" lean-forward="false" selection-start-line="320" selection-start-column="0" selection-end-line="320" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/banco_inteligente/banco_inteligente.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="5236">
+          <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/colheitadecaju/colheita_caju.py">
+    <entry file="file://$PROJECT_DIR$/times/times.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="498">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -552,10 +646,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/times/times.py">
+    <entry file="file://$PROJECT_DIR$/colheitadecaju/colheita_caju.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banco_inteligente/banco_inteligente.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/urllib/parse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="766" column="0" lean-forward="false" selection-start-line="766" selection-start-column="0" selection-end-line="766" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExpressoesdeJuvenal/expressoesdeJuyvenal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="159" column="22" lean-forward="true" selection-start-line="159" selection-start-column="22" selection-end-line="159" selection-end-column="22" />
           <folding />
         </state>
       </provider>
