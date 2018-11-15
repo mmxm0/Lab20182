@@ -160,9 +160,12 @@ while contador < linha1:
                 i += 1
             else:
                 saida = "N"
+                break
 
         except IndexError:
             saida = "N"
+    if p.getLen()>0:
+        saida = "N"
 
     saidaFinal+=saida + "\n"
     contador+=1
