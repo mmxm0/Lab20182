@@ -47,6 +47,7 @@ class ListaDuplamenteEncadeada():
             self._fim.setProximo(newno)
             newno.setAnterior(self._fim)
             self._fim = newno
+        self._len = self.getLen()
 
     def pesquisar(self, dado):
         if self.isVazia():
@@ -148,8 +149,8 @@ M = int(input())
 saida = input()
 i = 0
 idPessoa = ""
-entrada+=" "
-saida+=" "
+entrada += " "
+saida += " "
 for p in range(len(entrada)):
     if entrada[p] == " ":
         fila.inserir(idPessoa)
@@ -160,7 +161,8 @@ idPessoaSaida = ""
 for o in range(len(saida)):
     if saida[o] == " ":
         fila.remover(idPessoaSaida)
-        idPessoaSaida=""
-    else: idPessoaSaida+=saida[o]
+        idPessoaSaida = ""
+    else:
+        idPessoaSaida += saida[o]
 
 print(fila.listar())
