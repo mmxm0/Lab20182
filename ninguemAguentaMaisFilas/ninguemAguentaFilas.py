@@ -132,14 +132,14 @@ class ListaDuplamenteEncadeada():
 
     def getLen(self):
         if self.isVazia():
-            return 0
+            tamanho = 0
         else:
             k = self._inicio
             tamanho = 0
             while k is not None:
                 tamanho += 1
                 k = k.getProximo()
-            return tamanho
+        return tamanho
 
 
 fila = ListaDuplamenteEncadeada()
