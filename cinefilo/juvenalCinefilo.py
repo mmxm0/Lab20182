@@ -89,17 +89,18 @@ class ArvoreAvl():
     def pesquisar(self, Chave):
         no = self._raiz
         nivel = 1
-        while no is not None and Chave != no.getChave():
+        while no.getChave() != Chave and no is not None:
             if Chave < no.getChave():
                 nivel += 1
                 no = no.getEsquerdo()
             else:
                 nivel += 1
                 no = no.getDireito()
-        if no is not None:
+        
+        '''if no is not None:
             return str(nivel)
         else:
-            return "-1"
+            return "-1"'''
 
     def altura(self, no):
         if no is None:
@@ -250,6 +251,9 @@ class ArvoreAvl():
                 auxOrdem1 += str(auxMin)
                 auxOrdem1 += " "
         return auxOrdem1
+
+    def sucessor(self, no):
+        pass
 
 
 saida = ''

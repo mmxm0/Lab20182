@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aee05d2b-010e-44b1-9003-ebbdfb5978bb" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/Onibus/Onibus.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cinefilo/juvenalCinefilo.py" beforeDir="false" afterPath="$PROJECT_DIR$/cinefilo/juvenalCinefilo.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,7 +14,35 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="juvenalCinefilo.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cinefilo/juvenalCinefilo.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4352">
+              <caret line="256" selection-start-line="256" selection-end-line="256" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Onibus.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Onibus/Onibus.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="juvenal se perdeu.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/juvenalSEperdeu/juvenal se perdeu.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -45,6 +75,8 @@
         <option value="$PROJECT_DIR$/loucasDeJuvenal/loucasdeJuvenal1.0.py" />
         <option value="$PROJECT_DIR$/ninguemAguentaMaisFilas/ninguemAguentaFilas.py" />
         <option value="$PROJECT_DIR$/botas/Botas.py" />
+        <option value="$PROJECT_DIR$/cinefilo/juvenalCinefilo.py" />
+        <option value="$PROJECT_DIR$/Onibus/Onibus.py" />
       </list>
     </option>
   </component>
@@ -70,6 +102,11 @@
               <item name="Lab20182" type="b2602c69:ProjectViewProjectNode" />
               <item name="Lab20182" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Lab20182" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab20182" type="462c0819:PsiDirectoryNode" />
+              <item name="juvenalSEperdeu" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -92,7 +129,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.RoboColecionador">
+  <component name="RunManager" selected="Python.Onibus">
     <configuration name="Botas" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Lab20182" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -106,6 +143,24 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/botas/Botas.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="Onibus" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Lab20182" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Onibus" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Onibus/Onibus.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -142,24 +197,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="" />
       <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="expressoesdeJuyvenal" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Lab20182" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ExpressoesdeJuvenal" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ExpressoesdeJuvenal/expressoesdeJuyvenal.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -216,19 +253,19 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
     <list>
-      <item itemvalue="Python.expressoesdeJuyvenal" />
       <item itemvalue="Python.ninguemAguentaFilas" />
       <item itemvalue="Python.loucasdeJuvenal1.0" />
       <item itemvalue="Python.Botas" />
       <item itemvalue="Python.RoboColecionador" />
+      <item itemvalue="Python.Onibus" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Onibus" />
         <item itemvalue="Python.RoboColecionador" />
         <item itemvalue="Python.Botas" />
         <item itemvalue="Python.loucasdeJuvenal1.0" />
         <item itemvalue="Python.ninguemAguentaFilas" />
-        <item itemvalue="Python.expressoesdeJuyvenal" />
       </list>
     </recent_temporary>
   </component>
@@ -248,12 +285,12 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24524158" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24524158" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32872504" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.32872504" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2527822" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2527822" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32872504" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -309,6 +346,11 @@
           <line>80</line>
           <option name="timeStamp" value="45" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Onibus/Onibus.py</url>
+          <line>5</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -317,10 +359,24 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="46" />
+      <option name="time" value="48" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/cinefilo/juvenalCinefilo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4352">
+          <caret line="256" lean-forward="true" selection-start-line="256" selection-end-line="256" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Onibus/Onibus.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ExpressoesdeJuvenal/expressoesdeJuyvenal.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2686">
@@ -461,13 +517,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="323" selection-start-line="323" selection-end-line="323" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/urllib/parse.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -479,6 +528,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
           <caret line="86" column="13" lean-forward="true" selection-start-line="86" selection-start-column="13" selection-end-line="86" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cinefilo/juvenalCinefilo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4352">
+          <caret line="256" selection-start-line="256" selection-end-line="256" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="308" selection-start-line="308" selection-end-line="308" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/juvenalSEperdeu/juvenal se perdeu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Onibus/Onibus.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
