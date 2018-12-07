@@ -3,10 +3,9 @@ def DFS(rotasCidades, origem, destino, pai, controle):
         print(controle)
         return
 
-    for pivo in range(len(rotasCidades[origem])):
-        pai = origem
-        DFS(rotasCidades, rotasCidades[pai][pivo],destino,pai,controle+1)
-
+    for pivo in rotasCidades[origem]:
+        if pivo != pai:
+            DFS(rotasCidades, pivo, destino,origem,controle+1)
 
 ent = input().split()
 rotasCidades = {}
