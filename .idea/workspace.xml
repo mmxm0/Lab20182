@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aee05d2b-010e-44b1-9003-ebbdfb5978bb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Onibus/Onibus.py" beforeDir="false" afterPath="$PROJECT_DIR$/Onibus/Onibus.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aeromocas/SindicatoDasAeromocas.py" beforeDir="false" afterPath="$PROJECT_DIR$/Aeromocas/SindicatoDasAeromocas.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,11 +23,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Onibus.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Onibus.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Onibus/Onibus.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="49" lean-forward="true" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
+            <state relative-caret-position="323">
+              <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -35,7 +36,16 @@
         <entry file="file://$PROJECT_DIR$/juvenalSEperdeu/juvenal se perdeu.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+              <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SindicatoDasAeromocas.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Aeromocas/SindicatoDasAeromocas.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -52,7 +62,11 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>class No\:\n    def __init__\(self\, dados\=None\)\:\n        self\.__dado \= dados\n        self\.__anterior \= None\n        self\.__proximo \= None\n\n    def getProximo\(self\)\:\n        return self\.__proximo\n\n    def setProximo\(self\, no\)\:\n        self\.__proximo \= no\n\n    def getAnterior\(self\)\:\n        return self\.__anterior\n\n    def setAnterior\(self\, no\)\:\n        self\.__anterior \= no\n\n    def getDado\(self\)\:\n        return self\.__dado\n\n\nclass ListaEncadeada\(\)\:\n    def __init__\(self\)\:\n        self\._inicio \= None\n        self\._fim \= None\n        self\._len \= None\n\n    def getInicio\(self\)\:\n        return self\._inicio\n\n    def getFim\(self\)\:\n        return self\._fim\n\n    def isVazia\(self\)\:\n        if self\._inicio is None\:\n            return True\n        else\:\n            return False\n\n    def inserir\(self\, dado\)\:\n        newno \= No\(dado\)\n        if self\.isVazia\(\)\:\n            self\._inicio \= newno\n            self\._fim \= newno\n        else\:\n            self\._fim\.setProximo\(newno\)\n            newno\.setAnterior\(self\._fim\)\n            self\._fim \= newno\n\n    def pesquisar\(self\, dado\)\:\n        if self\.isVazia\(\)\:\n            print\(\&quot;Erro\, Lista Vazia\&quot;\)\n        else\:\n            nov \= No\(dado\)\n            i \= self\._inicio\n            while nov\.getDado\(\) \!\= i\.getDado\(\)\:\n                i \= i\.getProximo\(\)\n                if i is None\:\n                    break\n            else\:\n                return i\n\n    def remover\(self\)\:\n        if self\.isVazia\(\)\:\n            saida \= \&quot;ERRO\, LISTA VAZIA\&quot;\n\n        elif self\._inicio \=\= self\._fim\:\n            saida \= self\._fim\.getDado\(\)\n            self\._inicio \= None\n            self\._fim \= None\n\n        else\:\n            e \= self\._fim\n            saida \= e\.getDado\(\)\n            novoFim \= e\.getAnterior\(\)\n            self\._fim \= novoFim\n            novoFim\.setProximo\(None\)\n        return saida\n\n    def listarPilha\(self\)\:\n        saida \= \&quot;\[\&quot;\n        if self\.isVazia\(\)\:\n            saida \+\= \&quot; \]\&quot;\n        else\:\n            k \= self\._fim\n\n            while k is not None\:\n                saida \+\= \(str\(k\.getDado\(\)\) \+ \&quot;\, \&quot;\)\n                k \= k\.getAnterior\(\)\n        s \= saida\[\:\-2\:\]\n        s \+\= \&quot;\]\&quot;\n        print\(s\)\n\n    def listar\(self\)\:\n        saida \= \[\]\n        if self\.isVazia\(\)\:\n            saida \= None\n        else\:\n            k \= self\._inicio\n\n            while k is not None\:\n                saida\.append\(str\(k\.getDado\(\)\)\)\n                k \= k\.getProximo\(\)\n\n        return saida\n\n    def getLen\(self\)\:\n        if self\.isVazia\(\)\:\n            return 0\n        else\:\n            k \= self\._inicio\n            tamanho \= 0\n            while k is not None\:\n                tamanho \+\= 1\n                k \= k\.getProximo\(\)\n            return tamanho\n\n\nclass Pilha\(ListaEncadeada\)\:\n    def push\(self\, dado\)\:\n        self\.inserir\(dado\)\n\n    def pop\(self\)\:\n        return self\.remover\(\)\n\n\nlinha1\=int\(input\(\)\)\ncontador \= 0\n\n\ndef casa\(abre\, fecha\)\:\n    d \= \{\&quot;\[\&quot;\:\&quot;\]\&quot;\,\&quot;\{\&quot;\:\&quot;\}\&quot;\,\&quot;\(\&quot;\:\&quot;\)\&quot;\}\n    compara \= d\[abre\]\n    if compara \=\= fecha\:\n        b \= True\n    else\:\n        b \=  False\n    return b\n\n\nwhile contador \&lt; linha1\:\n \n    i \= 0\n    p \= Pilha\(\)\n    cadeia \= input\(\)\n    while i \&lt; len\(cadeia\)\:\n        saida \= \&quot;S\&quot;\n        n \= cadeia\[i\]\n        while n in \&quot;\(\{\[\&quot;\:\n            p\.push\(n\)\n            i\+\=1\n        s \= p\.pop\(\)\n        if casa\(s\,n\)\:\n            i\+\=1\n</find>
+      <find>resultado</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -75,11 +89,13 @@
         <option value="$PROJECT_DIR$/botas/Botas.py" />
         <option value="$PROJECT_DIR$/cinefilo/juvenalCinefilo.py" />
         <option value="$PROJECT_DIR$/Onibus/Onibus.py" />
+        <option value="$PROJECT_DIR$/Aeromocas/Aeromoca.py" />
+        <option value="$PROJECT_DIR$/Aeromocas/SindicatoDasAeromocas.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="562" />
     <option name="width" value="697" />
     <option name="height" value="735" />
   </component>
@@ -98,6 +114,11 @@
             <path>
               <item name="Lab20182" type="b2602c69:ProjectViewProjectNode" />
               <item name="Lab20182" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lab20182" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab20182" type="462c0819:PsiDirectoryNode" />
+              <item name="Aeromocas" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Lab20182" type="b2602c69:ProjectViewProjectNode" />
@@ -126,8 +147,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Onibus">
-    <configuration name="Botas" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.SindicatoDasAeromocas">
+    <configuration name="Aeromoca" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Lab20182" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -135,11 +156,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/botas" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Aeromocas" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/botas/Botas.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Aeromocas/Aeromoca.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -181,6 +202,24 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="SindicatoDasAeromocas" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Lab20182" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Aeromocas" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Aeromocas/SindicatoDasAeromocas.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -199,7 +238,7 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="loucasdeJuvenal1.0" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="juvenal se perdeu" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Lab20182" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -207,29 +246,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/loucasDeJuvenal" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/juvenalSEperdeu" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/loucasDeJuvenal/loucasdeJuvenal1.0.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="ninguemAguentaFilas" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Lab20182" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ninguemAguentaMaisFilas" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ninguemAguentaMaisFilas/ninguemAguentaFilas.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/juvenalSEperdeu/juvenal se perdeu.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -250,19 +271,19 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
     <list>
-      <item itemvalue="Python.ninguemAguentaFilas" />
-      <item itemvalue="Python.loucasdeJuvenal1.0" />
-      <item itemvalue="Python.Botas" />
       <item itemvalue="Python.RoboColecionador" />
       <item itemvalue="Python.Onibus" />
+      <item itemvalue="Python.juvenal se perdeu" />
+      <item itemvalue="Python.Aeromoca" />
+      <item itemvalue="Python.SindicatoDasAeromocas" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.SindicatoDasAeromocas" />
+        <item itemvalue="Python.Aeromoca" />
+        <item itemvalue="Python.juvenal se perdeu" />
         <item itemvalue="Python.Onibus" />
         <item itemvalue="Python.RoboColecionador" />
-        <item itemvalue="Python.Botas" />
-        <item itemvalue="Python.loucasdeJuvenal1.0" />
-        <item itemvalue="Python.ninguemAguentaFilas" />
       </list>
     </recent_temporary>
   </component>
@@ -280,19 +301,20 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="697" height="735" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.49192363" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.16617863" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3290938" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32872504" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.32872504" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2564516" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.25596184" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32872504" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3990461" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.31955484" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -300,7 +322,6 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -349,6 +370,16 @@
           <line>5</line>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Aeromocas/SindicatoDasAeromocas.py</url>
+          <line>60</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Aeromocas/SindicatoDasAeromocas.py</url>
+          <line>3</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -357,10 +388,31 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="48" />
+      <option name="time" value="52" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/cinefilo/juvenalCinefilo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4352">
+          <caret line="256" selection-start-line="256" selection-end-line="256" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Onibus/Onibus.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="52" lean-forward="true" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/juvenalSEperdeu/juvenal se perdeu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cinefilo/juvenalCinefilo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4352">
@@ -543,17 +595,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/juvenalSEperdeu/juvenal se perdeu.py">
+    <entry file="file://$PROJECT_DIR$/Onibus/Onibus.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        <state relative-caret-position="323">
+          <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Onibus/Onibus.py">
+    <entry file="file://$PROJECT_DIR$/juvenalSEperdeu/juvenal se perdeu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="49" lean-forward="true" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
+        <state relative-caret-position="238">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Aeromocas/Aeromoca.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-541">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Aeromocas/SindicatoDasAeromocas.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
