@@ -5,6 +5,16 @@ class No:
         self.__distancia = float("inf")
         self.__antecessor = None
         self.listaLigacao = l
+        self.__distPar = float('inf')
+        self.__distImpar = float('inf')
+        self.__controle = None
+
+    def getControle(self):
+        return self.__controle
+
+    def setControle(self, nc):
+
+        self.__controle = nc
 
     def getArestas(self):
         return self.__arestas
@@ -16,8 +26,17 @@ class No:
         except KeyError:
             return None
 
+    def getDistPar(self):
+        return self.__distPar
 
+    def getDistImpar(self):
+        return self.__distImpar
 
+    def setDistImpar(self, nd):
+        self.__distImpar = nd
+
+    def setDistPar(self, nd):
+        self.__distPar = nd
 
     def setAresta(self, v, p):
         tupla = (self.__vertice, v)
@@ -67,6 +86,31 @@ class Grafo:
             menor  = Q.pop(pivo)
             return menor
 
+    def minimoQpar(self, Qpar):
+        pivo = 0
+        for i in range(1,len(Qpar)):
+            if Qpar[i].getDistPar() < Qpar[pivo].getDistPar():
+                pivo = i
+        if len(Qpar)>0:
+            menor  = Qpar.pop(pivo)
+            return menor
+
+    def minimoQimp(self, Qimpar):
+        pivo = 0
+        for i in range(1,len(Qimpar)):
+            if Qimpar[i].getDistImpar() < Qimpar[pivo].getDistImpar():
+                pivo = i
+        if len(Qimpar)>0:
+            menor  = Qimpar.pop(pivo)
+            return menor
+
+    def minimoParImpar(self, Qpar, Qimpar):
+        mPar = self.minimoQpar(Qpar)
+        mImp = self.minimoQimp(Qimpar)
+        if mPar < mImp:
+            return mPar
+        else:
+            return mImp
 
     def podeAtualizaQ(self, Q, i):
         b = False
@@ -101,6 +145,39 @@ class Grafo:
                     Q[Q.index(node)] = node
 
         return self.__vertices[chega-1].getDistancia()
+
+    def djikstraModificado(self,sai, chega):
+
+        self.__vertices[sai-1].setDistancia(0)
+        self.__vertices[sai-1].setAntecessor(sai)
+        self.__vertices[sai-1].setControle('par')
+        Qpar = self.setQ()
+        Qimpar = self.setQ()
+
+        while len(Qpar)>0 and len(Qimpar)>0:
+
+            s = self.minimoParImpar(Qpar, Qimpar)
+            u = self.__vertices[self.__vertices.index(s)]
+
+            for i in u.listaLigacao:
+                resultado = u.getAresta(i)
+                v = resultado + u.getDistancia()
+                node = self.getNode(i)
+                #TODO: Organizar o controle, como ele vai saber que é pra atualizar o par ou o impar?
+                if self.podeAtualizaQ(Qpar, node) and v < node.getDistPar():
+                    node.setDistPar(v)
+                    node.setAntecessor(i)
+                    Qpar[Qpar.index(node)] = node
+                elif self.podeAtualizaQ(Qimpar, node) and v < node.getDistImpar():
+                    node.setDistImpar(v)
+                    node.setAntecessor(i)
+                    Qimpar[Qimpar.index(node)] = node
+
+        saida = self.__vertices[chega-1].getDistPar()
+
+        if saida == float('inf'):
+            return -1
+        else: return saida
 
 
 a = No(1)
