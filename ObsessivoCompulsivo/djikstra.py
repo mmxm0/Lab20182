@@ -107,7 +107,7 @@ class Grafo:
     def minimoParImpar(self, Qpar, Qimpar):
         mPar = self.minimoQpar(Qpar)
         mImp = self.minimoQimp(Qimpar)
-        if mPar < mImp:
+        if mPar.getDistPar() < mImp.getDistImpar():
             return mPar
         else:
             return mImp
@@ -131,6 +131,7 @@ class Grafo:
 
         self.__vertices[sai-1].setDistancia(0)
         self.__vertices[sai-1].setAntecessor(sai)
+
         while len(Q)>0:
 
             s = self.minimoQ(Q)
@@ -164,14 +165,18 @@ class Grafo:
                 v = resultado + u.getDistancia()
                 node = self.getNode(i)
                 #TODO: Organizar o controle, como ele vai saber que é pra atualizar o par ou o impar?
-                if self.podeAtualizaQ(Qpar, node) and v < node.getDistPar():
-                    node.setDistPar(v)
-                    node.setAntecessor(i)
-                    Qpar[Qpar.index(node)] = node
-                elif self.podeAtualizaQ(Qimpar, node) and v < node.getDistImpar():
-                    node.setDistImpar(v)
-                    node.setAntecessor(i)
-                    Qimpar[Qimpar.index(node)] = node
+                if node.getControle() == 'impar':
+                    if self.podeAtualizaQ(Qpar, node) and v < node.getDistPar():
+                        node.setDistPar(v)
+                        node.setAntecessor(i)
+                        node.setControle('par')
+                        Qpar[Qpar.index(node)] = node
+                elif node.getControle() == 'par':
+                    if self.podeAtualizaQ(Qimpar, node) and v < node.getDistImpar():
+                        node.setDistImpar(v)
+                        node.setAntecessor(i)
+                        node.setControle('impar')
+                        Qimpar[Qimpar.index(node)] = node
 
         saida = self.__vertices[chega-1].getDistPar()
 
@@ -210,3 +215,4 @@ l= [a,b,c,d,e,f]
 g = Grafo(l)
 
 print(g.djikstra(1,6))
+print(g.djikstraModificado(1,6))
