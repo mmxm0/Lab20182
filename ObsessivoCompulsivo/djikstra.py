@@ -164,14 +164,13 @@ class Grafo:
                 resultado = u.getAresta(i)
                 v = resultado + u.getDistancia()
                 node = self.getNode(i)
-                #TODO: Organizar o controle, como ele vai saber que é pra atualizar o par ou o impar?
-                if node.getControle() == 'impar':
+                if u.getControle() == 'impar':
                     if self.podeAtualizaQ(Qpar, node) and v < node.getDistPar():
                         node.setDistPar(v)
                         node.setAntecessor(i)
                         node.setControle('par')
                         Qpar[Qpar.index(node)] = node
-                elif node.getControle() == 'par':
+                elif u.getControle() == 'par':
                     if self.podeAtualizaQ(Qimpar, node) and v < node.getDistImpar():
                         node.setDistImpar(v)
                         node.setAntecessor(i)
@@ -184,7 +183,7 @@ class Grafo:
             return -1
         else: return saida
 
-
+#TODO: Tratar a entrada decentemente e remover mock
 a = No(1)
 b = No(2)
 c = No(3)
