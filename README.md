@@ -4,9 +4,9 @@
 
 [Peça perdida]()
 
-[Quadrado]()
+[Quadrado](https://github.com/mmxm0/Lab20182/blob/master/quadradoQuaseMagico.py)
 
-[Decifra]()
+[Decifra](https://github.com/mmxm0/Lab20182/blob/master/decifra.py)
 
 [Juvenal não confia em ninguém]()
 
@@ -22,5 +22,5 @@
 
 [As Escadas Rolantes de Juvenal](https://github.com/mmxm0/Lab20182/tree/master/EscadasRolantes)
 
-[3a VA - Familias de Tróia]()
+[3a VA - Familias de Tróia](https://github.com/mmxm0/Lab20182/blob/master/FamiliasDeTroia.py)
 
